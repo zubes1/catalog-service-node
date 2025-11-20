@@ -1,8 +1,8 @@
 diff --git a/compose.yaml b/compose.yaml
-index eaa1b8d..671ee5d 100644
+index 3393a28..2aacd8f 100644
 --- a/compose.yaml
 +++ b/compose.yaml
-@@ -78,13 +78,3 @@ services:
+@@ -84,17 +84,6 @@ services:
      post_start:
        - command: /opt/kafka/bin/kafka-topics.sh --create --if-not-exists --topic products --partitions 1 --replication-factor 1 --bootstrap-server kafka:9093
  
@@ -16,3 +16,7 @@ index eaa1b8d..671ee5d 100644
 -      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
 -    depends_on:
 -      - kafka
+-
+ configs:
+   pgadmin-pgpass:
+     content: |
