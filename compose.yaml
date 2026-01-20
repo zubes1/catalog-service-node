@@ -2,7 +2,7 @@ services:
 
   ################## DEMO WEB CLIENT ##################
   demo-client:
-    image: node:lts-slim
+    image: dhi.io/node:25-debian13-dev
     working_dir: /usr/local/app
     command: yarn dev
     ports:
@@ -12,7 +12,7 @@ services:
 
   ############## DATABASE AND VISUALIZER ##############
   postgres:
-    image: postgres:17.4
+    image: dhi.io/postgres:18-alpine3.22-dev
     ports:
       - "5432:5432"
     volumes:
@@ -45,7 +45,7 @@ services:
 
   ############## LOCAL AWS ##############
   aws:
-    image: localstack/localstack:4.3.0
+    image: dhi.io/localstack:4
     ports:
       - "4566:4566"
     post_start:
